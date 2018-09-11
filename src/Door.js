@@ -3,7 +3,12 @@ import ReactDOM from "react-dom";
 
 class Door extends React.Component {
   render() {
-    return <div className="door" />;
+    return (
+      <div
+        className="door"
+        style={{ backgroundColor: "" + this.props.doorColor + "" }}
+      />
+    );
   }
 }
 

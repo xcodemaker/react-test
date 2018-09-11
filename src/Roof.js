@@ -3,7 +3,12 @@ import ReactDOM from "react-dom";
 
 class Roof extends React.Component {
   render() {
-    return <div className="roof" />;
+    return (
+      <div
+        className="roof"
+        style={{ backgroundColor: "" + this.props.roofColor + "" }}
+      />
+    );
   }
 }
 
