@@ -4,13 +4,38 @@ import House from "./House";
 
 import "./styles.css";
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      house: []
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    let roofColor = prompt("Enter roof color ?");
+    let doorColor = prompt("Enter door color ?");
+
+    let house = this.state.house;
+
+    house.push({
+      roofColor,
+      doorColor
+    });
+
+    this.setState({ house: [...this.state.house, house] });
+  }
+
   render() {
-    const color1 = "yellow";
-    const color2 = "blue";
+    let house = this.state.house;
     return (
       <div className="App">
-        <House roofColor="red" doorColor="yellow" />
-        <House roofColor="purple" doorColor="green" />
+        <button className="button" onClick={this.handleClick}>
+          Build new house
+        </button>
+        {house.map(house => (
+          <House roofColor={house.roofColor} doorColor={house.doorColor} />
+        ))}
       </div>
     );
   }

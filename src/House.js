@@ -4,7 +4,7 @@ import Door from "./Door";
 import Roof from "./Roof";
 
 class House extends React.Component {
-  render(props) {
+  render() {
     return (
       <div className="house">
         <Roof roofColor={this.props.roofColor} />
